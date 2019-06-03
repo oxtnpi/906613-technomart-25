@@ -49,9 +49,9 @@ a {
 }
 
 .container {
-    width: 940px;
+    width: 960px;
     margin: 0 auto;
-    padding:0;
+    padding: 0 10px;
 }
 
 
@@ -93,6 +93,8 @@ a {
 }
 
 .site-search {
+    width: 270px;
+    height: 42px;
     display: inline-block;
     background-color: #293449;
     height: 42px;
@@ -105,8 +107,7 @@ a {
 }
 
 .site-search-input {
-    width: 270px;
-    height: 42px;
+   
     background-color:transparent;
     color:#fff;
     border: none;
@@ -604,8 +605,6 @@ height: 45px;
     }
 
 .main-about {
-    display: flex;
-    flex-direction: column;
     margin-right: 120px;
 }
 
@@ -654,6 +653,7 @@ height: 45px;
   line-height: 20px;
 }
 .main-about a {
+    display: block;
     width: 220px;
     height: 38px;
 }
@@ -670,10 +670,6 @@ height: 45px;
     background-color: #ba2732;
 }
 
-.main-contacts {
-    display: flex;
-    flex-direction: column;
-}
 
 .main-contacts h2 {
     width: 120px;
@@ -688,6 +684,7 @@ height: 45px;
 }
 
 .main-contacts a {
+  display: block;
   width: 300px;
   height: 38px;
   background-color: #ee3643;
@@ -751,7 +748,6 @@ height: 45px;
 }
 
 .main-footer {
-  width: 100%;
   background-color: #32425c;
 }
 
@@ -844,7 +840,6 @@ list-style: none;
 }
 
 .footer-bottom {
-  width: 100%;
   background-color:#293449;
 }
 
