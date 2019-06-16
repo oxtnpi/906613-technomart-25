@@ -89,7 +89,6 @@
   </header>
   <main class="inner-container">
     <div class="container">
-      <!--Остальной контент-->
       <ul class="breadcrumbs">
         <li><a class="index-link" href="index.html"><span class="visually-hidden">Главная</span></a></li>
         <li><a href="main-catalog.html">Каталог</a></li>
@@ -100,8 +99,21 @@
       <div class="catalog-colums">
         <section class="filters">
           <h2>Фильтр:</h2>
-          <!--Здесь будет форма фильтра -->
-
+          
+          <fieldset class="filter-coast-wrapper">
+            <legend>ЦЕНА:</legend>
+            <div class="filter-coast">
+            <div class="filter-coast-range">
+              <div class="range">
+              <div class="range-progress" style="width:152px"></div>
+              <div class="range-needle" style="left:0px"></div>
+              <div class="range-needle" style="left:140px"></div>
+            </div>
+          </div>
+            <label class="min">0</label>
+            <label class="max">30000</label>
+          </div>
+          </fieldset>
           <form class="filter" method="get" action="https://echo.htmlacademy.ru">
             <fieldset class="filter-brands">
               <legend>Производители:</legend>
@@ -164,6 +176,16 @@
         <!--Здесь будет форма сортировки-->
         <section class="catalog">
           <h2 class="visually-hidden">Каталог</h2>
+          <div class="assortment">
+              <h3>СОРТИРОВКА:</h3>
+              <ul class="assortment-nav">
+                <li><a class="active assortment-type">ПО ЦЕНЕ</a></li>
+                <li><a class="assortment-type type">ПО ТИПУ</a></li>
+                <li><a class="assortment-type features">ПО ФУНКЦИОНАЛУ</a></li>
+              </ul>
+              <button class="filter-more"><span class="visually-hidden">По возрастанию</span></button>
+              <button class="filter-less"><span class="visually-hidden">По убыванию</span></button>
+            </div>
           <ul class="catalog-list">
             <li class="catalog-item">
               <img class="product-photo" src="img/item-3000.jpg" width="218" height="170"
@@ -338,12 +360,7 @@
           дрель.</p>
       </section>
     </div>
-    <section class="added-to-cart-modal modal">
-      <h2>Товар добавлен в корзину!</h2>
-      <a href="cart.html" class="button">Оформить заказ</a>
-      <a class="secondary-button close-button" href="catalog.html">Продолжить покупки</a>
-      <button class="modal-close close-button" type="button">Закрыть</button>
-    </section>
+    
   </main>
   <footer class="main-footer">
     <div class="container">
@@ -410,7 +427,16 @@
       </div>
     </div>
   </footer>
-
+  <section class="cart-modal modal">
+      <h2>Товар добавлен в корзину!</h2>
+      <div class="cart-modal-wrapper">
+      <a href="cart.html" class="button">Оформить заказ</a>
+      <a class="secondary-button close-button" href="catalog.html">Продолжить покупки</a>
+      <button class="modal-close close-button" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </div>
+    </section>
 </body>
 
 </html>
