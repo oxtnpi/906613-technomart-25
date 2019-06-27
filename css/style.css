@@ -922,7 +922,7 @@ a {
 }
 
 .main-popular .catalog-list {
-  width: 960px;
+  width: 940px;
   margin: 0;
   margin-top: 21px;
   padding: 0;
@@ -1912,9 +1912,7 @@ a {
   text-transform: uppercase;
 }
 
-.main-contacts {
-  width: 300px;
-}
+
 
 .main-about p,
 .main-contacts p {
@@ -1980,18 +1978,22 @@ a {
   text-transform: uppercase;
 }
 
+
+
 .main-about a:hover,
-.main-contacts a:hover,
+.main-contacts .button:hover,
 .button:hover {
   background-color: #ca2c37;
 }
 
 .main-about a:active,
-.main-contacts a:active,
+.main-contacts .button:active,
 .button:active {
   background-color: #ba2732;
 }
-
+.main-contacts {
+  width: 300px;
+}
 
 .main-contacts h2 {
   width: 120px;
@@ -2006,7 +2008,14 @@ a {
   text-transform: uppercase;
 }
 
-.main-contacts a {
+ .main-contacts .map-link {
+  width:300px;
+  margin: 0;
+  margin-bottom: 38px;
+  padding: 0;
+}
+
+.main-contacts .button {
   display: block;
   width: 300px;
   height: 38px;
