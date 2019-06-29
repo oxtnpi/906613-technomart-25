@@ -7,13 +7,22 @@ var feedbackForm = document.querySelector(".feedback-form");
 var feedbackName = document.querySelector(".feedback-name");
 var feedbackEmail = document.querySelector(".feedback-email");
 var feedbackMessage = document.querySelector(".feedback-message");
-var emailStorage = localStorage.getItem("feedbackEmail");
-var nameStorage = localStorage.getItem("feedbackName");
+var emailStorage = "";
+var nameStorage = "";
 var isStorageSupport = true;
-var storage = "";
+
+function closeAllModals() {
+    Array.prototype.forEach.call(modals, function (item) {
+        if (item.classList.contains("modal-show")) {
+            item.classList.remove("modal-show");
+            feedbackPopup.classList.remove("modal-error");
+        }
+    });
+}
 
 try {
-    storage = localStorage.getItem("feedbackName");
+    emailStorage = localStorage.getItem("feedbackEmail");
+    nameStorage = localStorage.getItem("feedbackName");
 } catch (err) {
     isStorageSupport = false;
 }
@@ -21,11 +30,7 @@ try {
 link.addEventListener("click", function (evt) {
     evt.preventDefault();
 
-    modals.forEach(function (item) {
-        if (item.classList.contains("modal-show")) {
-            item.classList.remove("modal-show");
-        }
-    });
+    closeAllModals();
 
     feedbackPopup.classList.add("modal-show");
     feedbackName.focus();
@@ -37,9 +42,7 @@ link.addEventListener("click", function (evt) {
         feedbackEmail.value = emailStorage;
     }
 
-    if (storage) {
-        feedbackName.value = storage;
-        feedbackEmail.value = storage;
+    if (nameStorage && emailStorage) {
         feedbackMessage.focus();
     } else {
         feedbackName.focus();
@@ -50,17 +53,12 @@ link.addEventListener("click", function (evt) {
 mapLink.addEventListener("click", function (evt) {
     evt.preventDefault();
 
-    modals.forEach(function (item) {
-
-        if (item.classList.contains("modal-show")) {
-            item.classList.remove("modal-show");
-        }
-    });
+    closeAllModals();
 
     mapPopup.classList.add("modal-show");
 });
 
-modals.forEach(function (item) {
+Array.prototype.forEach.call(modals,function (item) {
     item.addEventListener("click", function (evt) {
 
         if (evt.target.classList.contains("modal-close")) {
@@ -90,12 +88,7 @@ feedbackForm.addEventListener("submit", function (evt) {
 window.addEventListener("keydown", function (evt) {
     if (evt.keyCode === 27) {
         evt.preventDefault();
-        modals.forEach(function (item) {
-
-            if (item.classList.contains("modal-show")) {
-                item.classList.remove("modal-show");
-                feedbackPopup.classList.remove("modal-error");
-            }
-        });
+        closeAllModals();
     }
 });
+
