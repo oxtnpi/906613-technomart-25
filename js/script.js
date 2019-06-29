@@ -33,7 +33,6 @@ link.addEventListener("click", function (evt) {
     closeAllModals();
 
     feedbackPopup.classList.add("modal-show");
-    feedbackName.focus();
 
     if (nameStorage) {
         feedbackName.value = nameStorage;
@@ -41,12 +40,13 @@ link.addEventListener("click", function (evt) {
     if (emailStorage) {
         feedbackEmail.value = emailStorage;
     }
-
+setTimeout (function(){
     if (nameStorage && emailStorage) {
         feedbackMessage.focus();
     } else {
         feedbackName.focus();
     }
+},700);
 });
 
 
