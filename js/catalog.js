@@ -19,4 +19,12 @@ function closeCartModal(evt) {
 Array.prototype.forEach.call(modalCloseButtons, function (modalClose) {
     modalClose.addEventListener("click", closeCartModal);
 
-})
+});
+
+window.addEventListener("keydown", function (evt) {
+    if (evt.keyCode === 27) {
+        evt.preventDefault();
+        closeCartModal(evt);
+    }
+});
+
